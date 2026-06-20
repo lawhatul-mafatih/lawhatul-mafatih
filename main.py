@@ -161,7 +161,16 @@ def main(page: ft.Page):
     # 8. AKSI KETIKA TOMBOL KEYBOARD VISUAL DIKLIK
     def tombol_keyboard_diklik(e):
         karakter_unicode = e.control.key
-        input_sandi.value = (input_sandi.value or "") + karakter_unicode
+        
+        # LOGIKA BARU: Jika tombol yang diklik adalah BACKSPACE kustom kawan
+        if karakter_unicode == "BACKSPACE":
+            if input_sandi.value:
+                # Memotong 1 karakter paling terakhir dari kanan kawan
+                input_sandi.value = input_sandi.value[:-1]
+        else:
+            # Jika tombol harakat biasa, tambahkan karakternya seperti biasa
+            input_sandi.value = (input_sandi.value or "") + karakter_unicode
+            
         input_sandi.update()
         isi_lauh[baris_aktif] = input_sandi.value
         perbarui_papan_lauh()

@@ -1,0 +1,7 @@
+# Konfigurasi Aplikasi Lawhatul Mafatih Mobile
+app:
+  name: "Lawhatul Mafatih"
+  package: "com.lawhatulmafatih.digitallauh"
+  version: "1.0.0"
+  main: "main.py"
+  assets: "assets"
